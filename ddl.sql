@@ -3,10 +3,6 @@ USE desafio;
 
 CREATE SCHEMA producao;
 
-CREATE TABLE producao.Linha_Producao(
-	cd_linha_producao INT NOT NULL PRIMARY KEY IDENTITY(1,1)
-);
-
 CREATE TABLE producao.Tipo_Produto(
 	cd_tipo_produto INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	nm_tipo_produto VARCHAR(50) NOT NULL
@@ -35,8 +31,6 @@ CREATE TABLE producao.Produto(
 	cd_linha_producao INT NOT NULL,
 	aa_producao INT NOT NULL,
 	cd_tipo_produto INT NOT NULL,
-	FOREIGN KEY (cd_linha_producao) REFERENCES
-                    producao.Linha_Producao(cd_linha_producao),
 	FOREIGN KEY (cd_tipo_produto) REFERENCES
                     producao.Tipo_Produto(cd_tipo_produto),
 	PRIMARY KEY(cd_produto, cd_linha_producao, aa_producao)
