@@ -1,20 +1,3 @@
-DELETE FROM producao.Inspecao;
-DBCC CHECKIDENT ('producao.Inspecao', RESEED, 0);
-
-DELETE FROM producao.Produto;
-DBCC CHECKIDENT ('producao.Produto', RESEED, 0);
-
-DELETE FROM producao.Ficha;
-DBCC CHECKIDENT ('producao.Ficha', RESEED, 0);
-
-DELETE FROM producao.Inspetor;
-DBCC CHECKIDENT ('producao.Inspetor', RESEED, 0);
-
-DELETE FROM producao.Avaliacao;
-
-DELETE FROM producao.Tipo_Produto;
-DBCC CHECKIDENT ('producao.Tipo_Produto', RESEED, 0);
-
 begin transaction;
 	INSERT INTO producao.Tipo_Produto(nm_tipo_produto) VALUES
 		('Geladeira'), ('Maquina de Lavar'), ('Fogao'), ('Freezer'), ('Frigobar');

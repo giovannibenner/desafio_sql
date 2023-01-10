@@ -26,6 +26,7 @@ CREATE TABLE producao.Ficha(
 	cd_matricula INT NOT NULL,
 	FOREIGN KEY (cd_matricula) REFERENCES
                     producao.Inspetor(cd_matricula)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE producao.Produto(
@@ -34,7 +35,8 @@ CREATE TABLE producao.Produto(
 	aa_producao INT NOT NULL,
 	cd_tipo_produto INT NOT NULL,
 	FOREIGN KEY (cd_tipo_produto) REFERENCES
-                    producao.Tipo_Produto(cd_tipo_produto),
+                    producao.Tipo_Produto(cd_tipo_produto)
+		ON DELETE CASCADE,
 	PRIMARY KEY(cd_produto, cd_linha_producao, aa_producao)
 );
 
@@ -47,9 +49,12 @@ CREATE TABLE producao.Inspecao(
 	cd_avaliacao VARCHAR(2) NOT NULL,
 	hr_inspecao TIME,
 	FOREIGN KEY (cd_ficha) REFERENCES
-                    producao.Ficha(cd_ficha),
+                    producao.Ficha(cd_ficha) 
+		ON DELETE CASCADE,
 	FOREIGN KEY (cd_produto, linha_produto, aa_produto) REFERENCES
-                    producao.Produto(cd_produto, cd_linha_producao, aa_producao),
+                    producao.Produto(cd_produto, cd_linha_producao, aa_producao)
+		ON DELETE CASCADE,
 	FOREIGN KEY (cd_avaliacao) REFERENCES
                     producao.Avaliacao(cd_avaliacao)
+		ON DELETE CASCADE
 );
