@@ -1,0 +1,9 @@
+Para teste do banco de dados e das consultas, favor:
+1 - executar os comandos do arquivo ddl.sql para a criação do banco
+2 - executar os comandos do arquivo dml.sql para inserir dados organizados no banco
+3 - realizar as consultas do arquivo query.sql
+
+obs1: Antes da inserção existem os comandos para limpar o banco e resetar a chave primaria.
+obs2: Os dados inseridos foram criados sem referência, apenas o Inspetor "Trancoso Da Silva" que foi informado.
+
+TODOS OS COMANDOS FORAM TESTADOS NO SSMS CONFORME UTILIZADO NAS AULAS.
