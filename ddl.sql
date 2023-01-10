@@ -1,3 +1,5 @@
+DROP DATABASE desafio; -- excluir a base para recriar
+
 CREATE DATABASE desafio;
 USE desafio;
 
